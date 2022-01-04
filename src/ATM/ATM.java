@@ -18,7 +18,7 @@ public class ATM {
     }
 
     public static int checkBank(BankCard card) {
-        ServicedBank.valueOf(card.nameOfBank) =
+
         for (ServicedBank nameOfBank : ServicedBank.values()) {
             if (nameOfBank.name1.equals(card.nameOfBank)) {
                servicedBank1 = 1;
@@ -139,10 +139,10 @@ return servicedBank1;
         System.out.println(card.balance);
     }
 
-    public static int getCash(BankCard card) {
+    public static double getCash(BankCard card) {
         Scanner sc2 = new Scanner(System.in);
         System.out.println("Enter number of money");
-        int a = sc2.nextInt();
+        double a = sc2.nextDouble();
         if (a <= card.balance) {
             card.balance = card.balance - a;
             System.out.println("Take your many." + "\n" + "Balance of money on the card: " + card.balance); ///// проверка работы
@@ -153,11 +153,11 @@ return servicedBank1;
         }
     }
 
-    public static int getCash(CreditCard card) {
+    public static double getCash(CreditCard card) {
         Scanner sc2 = new Scanner(System.in);
         System.out.println("Enter number of money");
-        int a = sc2.nextInt();
-        int x = card.balance - a;
+        double a = sc2.nextInt();
+        double x = card.balance - a;
         if (a <= card.balance) {
             card.balance = card.balance - a;
             System.out.println("Take your many." + "\n" + "Balance of money on the card: " + card.balance); ///// проверка работы

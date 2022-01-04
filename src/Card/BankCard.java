@@ -8,7 +8,7 @@ public class BankCard {
         int  numberOfCreditCard;
         String nameOwner;
         public String pinCode;
-        public int balance;
+        public double balance;
         public int blocking;
 
         public BankCard(String nameOfBank, String nameOwner, int numberOfCreditCard, String pinCode, int balance, int blocking) {
