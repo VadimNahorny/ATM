@@ -6,18 +6,12 @@ import ServicedBank.ServicedBank;
 
 import java.util.Scanner;
 
-import static java.lang.String.valueOf;
-
 public class ATM {
-    public static int a = 0;
-    public static int servicedBank1 = 1; /// 1 - serviced, 0 - not serviced.
+    public  int a = 0;
+    public  int servicedBank1 = 1; /// 1 - serviced, 0 - not serviced.
     ServicedBank servicedBank;
 
-    public ATM (ServicedBank servicedBank) {
-        this.servicedBank =  servicedBank;
-    }
-
-    public static int checkBank(BankCard card) {
+   public int checkBank(BankCard card) {
 
         for (ServicedBank nameOfBank : ServicedBank.values()) {
             if (nameOfBank.name1.equals(card.nameOfBank)) {
@@ -34,7 +28,7 @@ public class ATM {
 return servicedBank1;
 }
 
-    public static int enterPinCode(BankCard card) {
+    public int enterPinCode(BankCard card) {
         if (servicedBank1 == 1) {
             if (card.blocking == 1) {
                 Scanner s = new Scanner(System.in);
@@ -64,7 +58,7 @@ return servicedBank1;
     }
 
 
-    public static int workWithAtm(BankCard card) {
+    public  int workWithAtm(BankCard card) {
         if (a == 1) {
             Scanner sc1 = new Scanner(System.in);
             System.out.println("Choose operation: 1.checking the balance of money 2.Get cash 3.Take card");
@@ -99,7 +93,7 @@ return servicedBank1;
         return 0;
     }
 
-    public static int workWithAtm(CreditCard card) {
+    public  int workWithAtm(CreditCard card) {
         if (a == 1) {
             Scanner sc1 = new Scanner(System.in);
             System.out.println("Choose operation: 1.checking the balance of money 2.Get cash 3.Take card");
@@ -135,11 +129,11 @@ return servicedBank1;
     }
 
 
-    public static void checkingBalance(BankCard card) {
+    public  void checkingBalance(BankCard card) {
         System.out.println(card.balance);
     }
 
-    public static double getCash(BankCard card) {
+    public  double getCash(BankCard card) {
         Scanner sc2 = new Scanner(System.in);
         System.out.println("Enter number of money");
         double a = sc2.nextDouble();
@@ -153,7 +147,7 @@ return servicedBank1;
         }
     }
 
-    public static double getCash(CreditCard card) {
+    public  double getCash(CreditCard card) {
         Scanner sc2 = new Scanner(System.in);
         System.out.println("Enter number of money");
         double a = sc2.nextInt();
@@ -180,13 +174,13 @@ return servicedBank1;
         return card.balance;
     }
 
-    public static void ATM (BankCard card) {
+    public void ATM1(BankCard card) {
         checkBank(card);
         enterPinCode(card);
         workWithAtm(card);
     }
 
-    public static void  ATM (CreditCard card) {
+    public void  ATM2(CreditCard card) {
         checkBank(card);
         enterPinCode(card);
         workWithAtm(card);
